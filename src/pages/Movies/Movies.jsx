@@ -4,7 +4,7 @@ import { useEffect, useState} from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import { toast } from 'react-toastify';
-import { fetchApiMovies } from 'servicec/API.service';
+import { fetchApiSearchMovies } from 'servicec/API.service';
 
 const Movies = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -16,7 +16,7 @@ const Movies = () => {
   useEffect(() => {
     if (!searchQuery) return;
 
-    fetchApiMovies('search', searchQuery).then(({ results }) => {
+    fetchApiSearchMovies(searchQuery).then(({ results }) => {
       
       const searchMovies =
         [...results.map(({ id, title }) => ({ id, title }))] ?? [];
@@ -34,7 +34,7 @@ const Movies = () => {
   return (
     <>
       <SearchBar onSubmit={onSubmit} />
-      {movies.length && <MoviesList movies={movies} path={''} />}
+      {movies && <MoviesList movies={movies} path={''} />}
     </>
   );
 };

@@ -9,7 +9,7 @@ const HomePage = () => {
 
   useEffect(() => {
     setIsLoading(true);
-    fetchApiMovies('trending')
+    fetchApiMovies()
       .then(({ results }) => {
         setMovies([...results.map(({ id, title }) => ({ id, title }))]);
       })
@@ -19,6 +19,7 @@ const HomePage = () => {
   return (
     <>
       {isLoading && <h2>Loading...</h2>}
+      <h2>Trending today</h2>
       <MoviesList path={'movies/'} movies={movies} />
     </>
   );
