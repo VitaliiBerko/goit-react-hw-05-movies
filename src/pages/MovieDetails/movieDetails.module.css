@@ -1,0 +1,46 @@
+.movieDetails {
+    margin-left: 32px;
+    margin-top: 16px; 
+    display: flex;
+}
+
+.description {
+    padding: 16px;
+}
+
+.btn {
+    margin: 16px;
+}
+
+.addInfor {
+    margin: 32px;
+    padding: 8px;
+    box-shadow: -0px -2px 1px -1px rgba(0, 0, 0, 0.2),
+  0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+
+}
+
+.container {
+    max-width: 1600px;
+    padding: 5px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.cardSet {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .item {
+    flex-basis: calc((100% - 20px) / 5);
+    
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+      0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+  }

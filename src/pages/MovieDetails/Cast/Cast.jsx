@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchApiCast } from 'servicec/API.service';
+import css from '../movieDetails.module.css';
 
 const Cast = () => {
   const [cast, setCast] = useState([]);
@@ -22,22 +23,29 @@ const Cast = () => {
       .finally(() => setIsLoading(false));
   }, [movieId]);
 
-  return(<>
-  {isLoading && <h2>Loading...</h2>}
-  
-  <div>
-    <ul>
-    {cast.map(({name, character, profile_path})=>{
-        return( <li key={profile_path}>
-            <img src={`https://image.tmdb.org/t/p/w200/${profile_path}`} alt={name}  width='200'/>
-            <h2>{name}</h2>
-            <p>{character}</p>
-        </li>)
-       
-    })}
-    </ul>
-  </div>
-  </>)
+  return (
+    <>
+      {isLoading && <h2>Loading...</h2>}
+
+      <div className={css.container}>
+        <ul className={css.cardSet}>
+          {cast.map(({ name, character, profile_path }) => {
+            return (
+              <li key={profile_path} className={css.item}>
+                <img
+                  src={`https://image.tmdb.org/t/p/w200/${profile_path}`}
+                  alt={name}
+                  width="200"
+                />
+                <h2>{name}</h2>
+                <p>{character}</p>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </>
+  );
 };
 
 export default Cast;

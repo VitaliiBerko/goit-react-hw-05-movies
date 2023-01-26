@@ -3,13 +3,11 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-// https://api.themoviedb.org/3/movie/550?api_key=f4238f5bd8cc05dfda59a3450fa27d5e
-
 const KEY = 'f4238f5bd8cc05dfda59a3450fa27d5e';
 const BASE_URL = 'https://api.themoviedb.org/3';
 
 export const fetchApiMovies = async () => {
-    try {
+  try {
     const response = await axios.get(
       `${BASE_URL}/trending/movie/day?api_key=${KEY}`
     );
@@ -41,19 +39,23 @@ export const fetchApiMovieDetails = async movieId => {
   }
 };
 
-export const fetchApiCast = async movieId=>{
-    try {
-        const response =await axios.get(`${BASE_URL}/movie/${movieId}/credits?api_key=${KEY}`);
-        return response.data
-    } catch (error) {
-        toast.error(error.message);
-    }
-}
-export const fetchApiReviews = async movieId=>{
-    try {
-        const response =await axios.get(`${BASE_URL}/movie/${movieId}/reviews?api_key=${KEY}`);
-        return response.data
-    } catch (error) {
-        toast.error(error.message);
-    }
-}
+export const fetchApiCast = async movieId => {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}/movie/${movieId}/credits?api_key=${KEY}`
+    );
+    return response.data;
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
+export const fetchApiReviews = async movieId => {
+  try {
+    const response = await axios.get(
+      `${BASE_URL}/movie/${movieId}/reviews?api_key=${KEY}`
+    );
+    return response.data;
+  } catch (error) {
+    toast.error(error.message);
+  }
+};
