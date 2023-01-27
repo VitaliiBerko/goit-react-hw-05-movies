@@ -9,6 +9,7 @@ import {
 
 import { fetchApiMovieDetails } from 'servicec/API.service';
 import css from './movieDetails.module.css';
+import clsx from 'clsx';
 
 const MovieDetails = () => {
   const [details, setDetails] = useState({});
@@ -43,7 +44,7 @@ const MovieDetails = () => {
             Go back
           </button>
 
-          <div className={css.movieDetails}>
+          <div className= {clsx(css.movieDetails, css.container)}>
             <img
               src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
               alt={title}
@@ -64,10 +65,10 @@ const MovieDetails = () => {
         <h2>Additional information</h2>
         <ul>
           <li>
-            <NavLink to="cast">Cast</NavLink>
+            <NavLink to="cast" state={location.state}>Cast</NavLink>
           </li>
           <li>
-            <NavLink to="reviews">Reviews</NavLink>
+            <NavLink to="reviews" state={location.state}>Reviews</NavLink>
           </li>
         </ul>
       </div>

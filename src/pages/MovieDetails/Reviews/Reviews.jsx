@@ -37,6 +37,7 @@ const Reviews = () => {
           })}
         </ul>
       </div>
+      {!reviews.length && <h2>Sorry. We dont have review for this movie</h2>}
     </>
   );
 };

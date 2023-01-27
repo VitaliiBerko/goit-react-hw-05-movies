@@ -4,12 +4,14 @@ import styled from 'styled-components';
 export const StyledNavLink = styled(NavLink)`
   color: black;
   font-size: 20px;
-  font-weight: 400;
+  font-weight: 400; 
+  
 
   display: inline-flex;
   padding: 16px;
   text-decoration: none;
   list-style: none;
+  
 
   &.active {
     color: tomato;

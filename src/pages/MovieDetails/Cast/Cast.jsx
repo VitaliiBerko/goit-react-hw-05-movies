@@ -44,6 +44,7 @@ const Cast = () => {
           })}
         </ul>
       </div>
+      {!cast.length && <h2>Sorry. We dont have cast for this movie</h2>}
     </>
   );
 };
