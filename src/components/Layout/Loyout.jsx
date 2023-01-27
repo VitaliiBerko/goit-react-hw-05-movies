@@ -1,31 +1,32 @@
 import { Outlet } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
-import css from './layout.module.css';
+// import { NavLink } from 'react-router-dom';
+// import css from './layout.module.css';
+import { Nav, StyledNavLink } from './layout.styled';
 
-const aciveStyle = {
-  color: 'tomato',
-};
+// const aciveStyle = {
+//   color: 'tomato',
+// };
 
 const Layout = () => {
   return (
     <div>
       <header>
-        <nav className={css.nav}>
-          <NavLink
+        <Nav>
+          <StyledNavLink
             to="/"
-            className={css.link}
-            style={({ isActive }) => (isActive ? aciveStyle : null)}
+            // className={css.link}
+            // style={({ isActive }) => (isActive ? aciveStyle : null)}
           >
             Home
-          </NavLink>
-          <NavLink
+          </StyledNavLink>
+          <StyledNavLink
             to="/movies"
-            className={css.link}
-            style={({ isActive }) => (isActive ? aciveStyle : null)}
+            // className={css.link}
+            // style={({ isActive }) => (isActive ? aciveStyle : null)}
           >
             Movies
-          </NavLink>
-        </nav>
+          </StyledNavLink>
+        </Nav>
       </header>
       <main>
         <Outlet />
